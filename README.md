@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Diary AI
 
-## Getting Started
+A journaling website with AI features built using Next.js and utilizing the OpenAI API.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **AI-Powered Journaling**: Users can leverage AI to enhance their journaling experience.
+- **Next.js Framework**: Utilizes Next.js for efficient server-side rendering.
+- **OpenAI API Integration**: Integrates with the OpenAI API for advanced AI capabilities.
+
+## Technologies Used
+
+- Next.js
+- OpenAI API
+
+## Prerequisites
+
+- Node.js
+- npm or yarn
+
+## Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/your-username/diary-ai.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+Ensure you have the OpenAI API key configured in the environment variables.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To use the Diary AI website:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Register for an API key on the OpenAI website.
+2. Configure the API key in the environment variables.
+3. Start the development server.
+4. Access the website from your browser.
 
-## Deploy on Vercel
+## API Reference
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Endpoint**: `/api/journal`
+- **Parameters**: 
+  - `text` (string): The journal entry text.
+- **Returns**:
+  - AI-enhanced journal entry.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Testing
+
+To run tests, use the following command:
+```
+npm test
+```
+
+## Contributing
+
+Contributions are welcome! Please follow our [Contribution Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+
+To submit pull requests:
+1. Fork the repository.
+2. Create a new branch.
+3. Make changes and commit them.
+4. Push to your fork and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact Information
+
+For any questions or support, contact the maintainers at [email@example.com](mailto:email@example.com).
+
+## Acknowledgments
+
+We would like to thank the contributors to this project.
