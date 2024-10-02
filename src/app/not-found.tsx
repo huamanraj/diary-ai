@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import { useState } from 'react'
+
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Search } from 'lucide-react'
+
 import logo from '../../public/images/diary ai 2.jpeg'
 import Image from 'next/image'
 
@@ -74,7 +74,7 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Oops! Looks like you've ventured into deep space.
+          Oops! Looks like you&#39ve ventured into deep space.
         </motion.p>
 
         {/* Navigation buttons */}
