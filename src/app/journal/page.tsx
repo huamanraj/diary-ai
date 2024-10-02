@@ -1,17 +1,35 @@
 'use client'
 
-import { useState } from 'react'
-import { Book, Edit3, List, Sun, ArrowLeft } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Book, Edit3, List, Sun, ArrowLeft, X } from 'lucide-react'
 import Link from 'next/link'
 
 export default function NewJournal() {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [aiInsights, setAiInsights] = useState('')
 
   const handleSave = () => {
-    // Implement save functionality here
+    // In a real application, you would save the journal entry here
     console.log('Saving journal:', { title, content })
+    
+    // Simulate getting AI insights
+    const mockAiInsights = "Your journal entry shows great self-reflection. You've touched on important aspects of personal growth and identified areas for improvement. Consider setting specific goals for the areas you want to work on, and remember to celebrate your progress along the way. Your awareness of both your strengths and challenges is a powerful tool for continued personal development."
+    setAiInsights(mockAiInsights)
+    setIsDialogOpen(true)
   }
+
+  useEffect(() => {
+    if (isDialogOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isDialogOpen])
 
   return (
     <div className="min-h-screen bg-[#03012a] text-gray-300">
@@ -71,6 +89,27 @@ export default function NewJournal() {
           </div>
         </div>
       </div>
+
+      {/* AI Insights Dialog */}
+      {isDialogOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-[#050233] border border-purple-700 text-gray-300 rounded-lg max-w-md w-full">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-4">
+                <h2 className="text-2xl font-bold text-purple-300">AI Insights</h2>
+                <button
+                  onClick={() => setIsDialogOpen(false)}
+                  className="bg-[#03012a] text-purple-400 hover:text-purple-300 hover:bg-[#040136] rounded-full p-2 focus:outline-none"
+                >
+                  <X className="h-5 w-5" />
+                  <span className="sr-only">Close</span>
+                </button>
+              </div>
+              <p className="text-gray-300">{aiInsights}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
